@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* ─── Tailwind v4 theme tokens ─────────────────────────────── */
+@theme {
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), "Fira Code", monospace;
+
+  --color-accent:       #4f46e5;
+  --color-accent-hover: #4338ca;
+  --color-border:       #e5e7eb;
+  --color-card:         #f8fafc;
+  --color-muted:        #64748b;
+}
+
+/* ─── Design tokens (for var() in components) ───────────────── */
+@layer base {
+  :root {
+    --color-bg:             #ffffff;
+    --color-text-primary:   #0f172a;
+    --color-text-secondary: #64748b;
+    --color-accent:         #4f46e5;
+    --color-accent-hover:   #4338ca;
+    --color-border:         #e5e7eb;
+    --color-card:           #f8fafc;
+  }
+
+  .dark {
+    --color-bg:             #09090b;
+    --color-text-primary:   #f4f4f5;
+    --color-text-secondary: #a1a1aa;
+    --color-accent:         #6366f1;
+    --color-accent-hover:   #818cf8;
+    --color-border:         #27272a;
+    --color-card:           #18181b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  a, button { cursor: none; }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: rgb(79 70 229 / 0.12);
+    color: var(--color-accent);
+  }
+}
+
+/* ─── Marquee animation ─────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html, a, button { cursor: auto; }
+}
