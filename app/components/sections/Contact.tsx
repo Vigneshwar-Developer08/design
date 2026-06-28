@@ -123,7 +123,7 @@ export default function Contact() {
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
-                className="flex flex-col gap-5 p-6 md:p-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-card)]"
+                className="flex flex-col gap-5 p-6 md:p-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] shadow-md hover:border-sky-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-300 ease-out"
                 aria-label="Contact form"
               >
                 {/* Name */}
