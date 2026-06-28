@@ -19,30 +19,30 @@ export default function Footer() {
 
   return (
     <footer>
-      {/* CTA band — tightened vertical padding so it closes the page, not restarts it */}
-      <div className="bg-white dark:bg-black py-10 md:py-14 border-t border-[var(--color-border)] relative">
+      {/* CTA band — blue bg on light theme, black on dark theme */}
+      <div className="bg-[var(--color-accent)] dark:bg-black py-10 md:py-14 border-t border-[var(--color-accent-hover)] dark:border-[var(--color-border)] relative">
         <div className="relative max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 text-center">
           <FadeIn delay={0.05} direction="none">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[var(--color-accent)] mb-4">
-              <span className="inline-block w-4 h-px bg-[var(--color-accent)]" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-indigo-200 dark:text-[var(--color-accent)] mb-4">
+              <span className="inline-block w-4 h-px bg-indigo-200 dark:bg-[var(--color-accent)]" aria-hidden="true" />
               Ready to start?
             </span>
           </FadeIn>
           <FadeIn delay={0.12}>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-[var(--color-text-primary)] leading-tight">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white dark:text-[var(--color-text-primary)] leading-tight">
               Let&apos;s build&nbsp;
-              <span className="text-[var(--color-accent)]">something great.</span>
+              <span className="text-indigo-200 dark:text-[var(--color-accent)]">something great.</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.22}>
-            <p className="mt-3 text-sm text-[var(--color-text-secondary)] max-w-sm mx-auto leading-relaxed">
+            <p className="mt-3 text-sm text-indigo-100 dark:text-[var(--color-text-secondary)] max-w-sm mx-auto leading-relaxed">
               Tell us about your project. We reply within one business day.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <Link
               href="#contact"
-              className="group mt-6 inline-flex items-center gap-2 bg-[var(--color-text-primary)] text-[var(--color-bg)] text-sm font-semibold px-6 py-2.5 rounded-lg hover:opacity-90 transition-all duration-200"
+              className="group mt-6 inline-flex items-center gap-2 bg-white text-[var(--color-accent)] dark:bg-[var(--color-text-primary)] dark:text-[var(--color-bg)] text-sm font-semibold px-6 py-2.5 rounded-lg hover:bg-indigo-50 dark:hover:opacity-90 transition-all duration-200"
             >
               Start a conversation
               <ArrowUpRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
